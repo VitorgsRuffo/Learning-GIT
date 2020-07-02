@@ -1,0 +1,78 @@
+Git Commands:
+
+    //checking if git is properly installed:
+        git --version
+
+
+    //setting up the local email and username for git:
+        git config --global user.email my@email.com
+
+        git config --global user.name username"
+
+
+    //initializes a new git repository on the current directory:
+        git init
+
+
+    //shows us which file has changed and which file is on the staging area(ready to be comitted):
+        git status
+
+
+    //adding a modified file to the staging area:
+        git add file-name.extension
+
+        git add . //adds all modified files to the staging area at once.
+   
+
+    //removing a file from the staging area:
+        git rm --cached file-name.extension
+
+
+    //commiting files from the staging area: (i.e, saving a new version of the project)
+        git commit -m "Here goes a massage that describes the project changes in this commit"
+
+
+    //checking the commit history:
+        git log  
+
+        git log --oneline //shows a shorter version of the commit history.
+
+
+    //GOING BACK IN TIME:
+
+        //checking out how the code was at a particular point (commit) in the past:
+            git checkout commit-id
+
+            git checkout master //going back to the last commit.
+
+        //undoing a particular commit by adding a new commit that reverts the changes made by the first one:
+            git revert commit-id
+
+            git revert --abort //undoing a commit may cause conflits with some other commits after it. You can cancel the revert operation (if some conflit happens) by using this command.
+
+        //going back to a particular commit made in the past and deleting all the commits after it:
+            git reset commit-id //this command doesn't change the files themselves, just the commit history. Thus if we type git status after that we will see that git interprets all those changes made by the deleted commits as changes in the files and put 'em in the 'modified area'.
+
+            git reset commit-id --hard //use this flag if you want to delete the changes in the files too, not just in the commit history.
+  
+    //BRANCHING:
+
+        //displays all the repository branches:
+            git branch -a
+
+        //creates a new branch:
+            git branch branch-name
+        
+        //switches to a different branch:
+            git checkout branch-name
+
+        //creates a new branch and switches to it:
+            git checkout -b branch-name
+        
+        //in case you don't want the commits made on a saparate branch you can delete that branch:
+            git branch -D branch-name //deletes the branch even if you didn't merge it to the master branch yet.
+
+            git branch -d branch-name //deletes the branch only if you have already merged it to the master branch.
+
+        //merging branches to the master branch:
+        
