@@ -1,17 +1,19 @@
+GIT: Version Control System for tracking changes in computer files.
+
 Git Commands:
 
-    //checking if git is properly installed:
+    //check if git is properly installed by asking for the version of it:
         git --version
-
-
-    //setting up the local email and username for git:
-        git config --global user.email my@email.com
-
-        git config --global user.name username"
 
 
     //initializes a new git repository on the current directory:
         git init
+
+
+    //setting up the local email and username for git:
+        git config --global user.email my@email.com
+  
+        git config --global user.name username"
 
 
     //shows us which file has changed and which file is on the staging area(ready to be comitted):
@@ -79,7 +81,7 @@ Git Commands:
             
            //(keep in mind that there are different ways of merging. For example, if the master branch didn't change while we were working on another branch then git will perform a 'fast forward' merge. 
            If it changed and that change happens in a place that is different from the change on the branch we're trying to merge into master git uses a 'recursive' merge
-           But if the change in the master is on the same place where we're working on a different branch we're gonna have a conflit when mergin. In this last case we must solve the conflits on the source code then commit the final version of the file(s)).
+           But if the change in the master is on the same place where we're working on a different branch we're gonna have a conflit when merging. In this last case we must solve the conflits on the source code then commit the final version of the file(s)).
 
 
     //REMOTE REPOSITORIES (GITHUB):
@@ -92,7 +94,7 @@ Git Commands:
 
                     git remote -v //shows the remote repo connected with this local one.
 
-            //If you don't:
+            //If you don't have a local repo yet:
                 //bring a remote repo to your computer by creating a local version of it:    
                     git clone https://github.com/path/to/remote/repository
             
@@ -113,4 +115,13 @@ Git Commands:
             3-Then you can push that new branch with the new feature to the remote repo;
             4-You can open a pull request (basically it is a request for merging that branch with your changes into the master branch) on github;
             5-Other collaborators will review your changes and decide if everyone wants to merge that into the master branch.
+        
+        //FORKING:
+            If you want to collaborate on a project (github repo) you can fork its repository.
+            That will make an exact copy of it in my account.
+            Then I can make the changes I wanna make. (on a new branch - remember: always test new features on different branches)
+            After that I can send a Pull Request to the original's repo owner requesting to merge my repo into his. 
+            He is gonna review the changes and decide if he will accept my changes.
             
+
+    //.gitignore: file for specifing files and directories that you don't want git to keep to keep track of, therefore, they will be ignored.
