@@ -80,7 +80,7 @@ Git Commands:
             git merge branch-name
             
            //(keep in mind that there are different ways of merging. For example, if the master branch didn't change while we were working on another branch then git will perform a 'fast forward' merge. 
-           If it changed and that change happens in a place that is different from the change on the branch we're trying to merge into master git uses a 'recursive' merge
+           If it changed and that change happens in a place that is different from the change on the branch we're trying to merge into master git uses a 'recursive' merge.
            But if the change in the master is on the same place where we're working on a different branch we're gonna have a conflit when merging. In this last case we must solve the conflits on the source code then commit the final version of the file(s)).
 
 
@@ -108,6 +108,13 @@ Git Commands:
             git pull origin branch-name 
 
             //obs: always pull the master branch from the remote repo before starting to work on a new feature.(that's because somebody might have pushed new commits).
+
+        //FETCHING A REMOTE BRANCH TO YOUR LOCAL REPOSITORY:
+        
+            git fetch origin
+            git branch -a
+            git checkout -b branch_name origin/branch_name
+
 
         //COLLABORATION DYNAMIC:
             1-Pull the remote master branch into your local master branch;
